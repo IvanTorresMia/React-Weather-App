@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-
-import './App.css'
+import Todos from './components/Todos';
+import './App.css';
 
 class App extends Component {
   // This is a life cycle method, it is required to rended the component
@@ -8,10 +8,33 @@ class App extends Component {
   // Here we have JSX which is very similar to html. and you can use javascript insde of here
 
   // use className 
+state = {
+  todos: [
+    {
+      id: 1,
+      title: 'take out the trash',
+      completed: false
+    },
+    {
+      id: 2,
+      title: 'Dinner with wife',
+      completed: false
+    },
+    {
+      id: 3,
+      title: 'Meeting with boss',
+      completed: false
+    }
+   
+  ]
+}
+
+
   render() {
+
     return (
       <div className='App'>
-        <h1>App</h1>
+        <Todos todos={this.state.todos} />
       </div>
     )
 
