@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Nav from './Components/Nav'
 import Wrapper from './Components/Wrapper'
+import WeatherContext from './Utils/WeatherContext'
+import Footer from './Components/Footer'
 
 
 // use context 
@@ -8,6 +10,12 @@ import Wrapper from './Components/Wrapper'
 
 function App() {
 
+    const [currentWeather, setCurrentWeather] = useState({
+        temperature: "",
+        humidity: "",
+        Windspeed: "",
+        UVindex: "",
+    })
 
 
 
@@ -15,7 +23,10 @@ function App() {
 return (
 <div>
 <Nav />
+<WeatherContext.Provider>
 < Wrapper/>
+</WeatherContext.Provider>
+< Footer/>
 </div>
 
 
