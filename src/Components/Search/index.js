@@ -3,9 +3,14 @@ import React from 'react'
 function Search() {
 
     return (
-        <div className="row rounded">
+        <div className="container rounded">
+            <div className="row">
             <h1>Search a City!</h1>
-            <input type="text" className="bar form-control text-center" placeholder="What are you looking for?" />
+            </div>
+            <div className="row">
+            <input type="text" className="bar text-center" placeholder="What are you looking for?" />
+            <button className="btn">Search</button>
+            </div>
         </div>
     )
 }
