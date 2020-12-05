@@ -21,3 +21,5 @@ function Wrapper() {
         </div>
     )
 }
+
+export default Wrapper;
