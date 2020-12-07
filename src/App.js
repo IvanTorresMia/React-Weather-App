@@ -58,7 +58,12 @@ return (
                     < History/>
                 </div>
                 <div className="col">
-                    < Weather name={currentWeather.name}/>
+                    < Weather
+                    name={currentWeather.name}
+                    temp={currentWeather.temperature}
+                    humidity={currentWeather.humidity}
+                    Windspeed={currentWeather.Windspeed}
+                    />
                     < Cards/>
                 </div>
             </div>
