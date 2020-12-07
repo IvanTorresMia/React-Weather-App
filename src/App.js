@@ -21,16 +21,15 @@ function App() {
     Windspeed: "",
     UVindex: "",
   });
-
-  //   make the axios calls, then set the state of the weather, once thats done.
-  // use the vales of the state to fill in the props of compenents i.e Weather
+  const [fiveDay, setFiveDay] = useState();
+  // for 5 day set the state of five day forcast then loop through the state using context
 
   // practice back end
   // save the weather data to a data base then call it back when a button is pressed
 
   function handleInput(event) {
     const { value } = event.target;
-    setInputState(value)
+    setInputState(value);
   }
 
   function getWeather() {
