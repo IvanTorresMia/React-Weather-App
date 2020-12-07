@@ -21,7 +21,7 @@ import Weather from "./Components/Weather";
     Windspeed: "",
     UVindex: "",
   });
-  const [fiveDay, setFiveDay] = useState();
+  const [fiveDay, setFiveDay] = useState([]);
   const fiveDayArr = [];
   // for 5 day set the state of five day forcast then loop through the state using context
 
@@ -66,7 +66,7 @@ import Weather from "./Components/Weather";
   return (
     <div>
       <Nav />
-      <WeatherContext.Provider value={currentWeather}>
+      
         <div className="conatiner">
           <div className="row">
             <div className="col">
@@ -81,11 +81,13 @@ import Weather from "./Components/Weather";
                 Windspeed={currentWeather.W}
                 UVindex={currentWeather.UVindex}
               />
+              <WeatherContext.Provider value={fiveDay}>
               <Cards />
+              </WeatherContext.Provider>
             </div>
           </div>
         </div>
-      </WeatherContext.Provider>
+      
       <Footer />
     </div>
   );
