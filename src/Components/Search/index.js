@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Search() {
+function Search({handleSearch}) {
 
     return (
         <div className="container rounded">
@@ -9,7 +9,7 @@ function Search() {
             </div>
             <div className="row">
             <input type="text" className="bar text-center" placeholder="What are you looking for?" />
-            <button className="btn">Search</button>
+            <button className="btn" onClick={handleSearch}>Search</button>
             </div>
         </div>
     )
