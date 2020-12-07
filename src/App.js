@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Nav from './Components/Nav'
 import Wrapper from './Components/Wrapper'
 import WeatherContext from './Utils/WeatherContext'
 import Footer from './Components/Footer'
+import API from './Utils/API'
 
 
 // use context 
@@ -11,12 +12,19 @@ import Footer from './Components/Footer'
 function App() {
 
     const [currentWeather, setCurrentWeather] = useState({
+        name: "",
         temperature: "",
         humidity: "",
         Windspeed: "",
         UVindex: "",
     })
 
+  
+API.getWeather('California').then((res) => {
+    console.log(res)
+
+   
+})
 
 
 
