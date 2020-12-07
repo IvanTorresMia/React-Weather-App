@@ -9,6 +9,9 @@ const API = {
     },
     getUV: function(latt, long) {
         return axios.get("https://api.openweathermap.org/data/2.5/uvi?lat=" + latt + "&lon=" +long + "&appid=" + KEY)
+    },
+    get5Day: function(city) {
+        return axios.get("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + key +  "&units=imperial")
     }
 }
 
