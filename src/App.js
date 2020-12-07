@@ -22,6 +22,7 @@ import Weather from "./Components/Weather";
     UVindex: "",
   });
   const [fiveDay, setFiveDay] = useState();
+  const fiveDayArr = [];
   // for 5 day set the state of five day forcast then loop through the state using context
 
   // practice back end
@@ -50,18 +51,16 @@ import Weather from "./Components/Weather";
       });
     });
 
-    API.get5Day(inputState).then((res) => {
-       const fiveDayArr = [];
-
+    API.get5Day(inputState).then((fiveRes) => {
+        console.log(fiveRes.data)
         for (let i = 0; i < 40; i = i +8) {
-          fiveDayArr.push(res.data[i])
-           console.log(res.data[i])
+          fiveDayArr.push(fiveRes.data.list[i])
+           console.log(fiveRes.data.list[i])
        }
 
        setFiveDay(fiveDayArr)
     })
 
-    console.log(fiveDay)
   }
 
   return (
