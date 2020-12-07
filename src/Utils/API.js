@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const KEY = "58d666652ff1413e43798800e2896f32";
+const KEY = "9ddc8097fb5593b533f4685eec567503";
 
 const API = {
     // Grab the current weather. 
