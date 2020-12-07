@@ -1,11 +1,14 @@
 import React from 'react'
+// import WeatherContext from '../../Utils/WeatherContext'
+function Weather({name, temp, humidity, Windspeed}) {
 
-function Weather() {
+  
 
     return (
 
         <div>
-            <h1>Weather goes here</h1>
+           <h1>{name}</h1>
+            
         </div>
     )
 }
