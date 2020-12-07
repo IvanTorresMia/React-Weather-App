@@ -12,7 +12,7 @@ import Weather from "./Components/Weather";
 // use context
 // set the state for the current weather, put the value of the api
 
-function App() {
+ function App() {
   const [inputState, setInputState] = useState("");
   const [currentWeather, setCurrentWeather] = useState({
     name: "",
@@ -32,7 +32,7 @@ function App() {
     setInputState(value);
   }
 
-  function getWeather() {
+   async function getWeather() {
     const currentDate = moment().format(" (dddd, MMMM Do YYYY)");
     API.getWeather(inputState).then((res) => {
       const long = res.data.coord.lon;
@@ -49,6 +49,19 @@ function App() {
         });
       });
     });
+
+    API.get5Day(inputState).then((res) => {
+       const fiveDayArr = [];
+
+        for (let i = 0; i < 40; i = i +8) {
+          fiveDayArr.push(res.data[i])
+           console.log(res.data[i])
+       }
+
+       setFiveDay(fiveDayArr)
+    })
+
+    console.log(fiveDay)
   }
 
   return (
