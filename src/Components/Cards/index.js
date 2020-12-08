@@ -7,11 +7,11 @@ function Cards() {
 
   return (
 
-     <>
-        <h3 className="display-4">Five Day Forcast</h3>
+     <div className="Container rounded m-4 p-4">
+        <h2 className="card-title">Five Day Forcast</h2>
         <div className="row">
         {context.map((day, i) => (
-          <div className="Card rounded m-2 col-sm-2">
+          <div className="Card rounded m-2 col-sm-2 p-2">
             <p key={i}>{day.dt_txt.substring(0, 10)}</p>
             <p>Temperature {day.main.temp} °</p>
             <p>Humidity {day.main.humidity} %</p>
@@ -25,7 +25,7 @@ function Cards() {
           </div>
         ))}
       </div>
-      </>
+      </div>
   );
 }
 

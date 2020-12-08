@@ -8,6 +8,7 @@ import Search from "./Components/Search";
 import History from "./Components/History";
 import Cards from "./Components/Cards";
 import Weather from "./Components/Weather";
+import './App.css'
 
 // use context
 // set the state for the current weather, put the value of the api
