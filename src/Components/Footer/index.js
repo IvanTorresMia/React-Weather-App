@@ -9,7 +9,7 @@ function Footer() {
         <header className="footer p-2 fixed-buttom">
           <div className="row">
             <div className="col-lg text-center">
-              <h1 className="text">Footer</h1>
+              <h1 className="display-4">Footer</h1>
             </div>
           </div>
         </header>
