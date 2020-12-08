@@ -6,7 +6,7 @@ function Footer() {
 
     return (
         <div>
-        <header className="footer p-2 fixed-buttom footer">
+        <header className="footer p-2 fixed-buttom">
           <div className="row">
             <div className="col-lg text-center">
               <h1 className="text">Footer</h1>
