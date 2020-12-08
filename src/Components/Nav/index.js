@@ -1,12 +1,13 @@
 import React from "react";
+import './style.css'
 
 function Nav() {
   return (
     <div>
-      <header className="bg-dark p-2 container-fluid">
+      <header className="p-2 container-fluid Nav">
         <div className="row">
           <div className="col-lg text-center">
-            <h1 className="text-white">My Weather App</h1>
+            <h1 className="text">My Weather App</h1>
           </div>
         </div>
       </header>
