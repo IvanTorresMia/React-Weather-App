@@ -12,9 +12,9 @@ function Cards() {
         <div className="row">
         {context.map((day, i) => (
           <div className="Card rounded m-2 col-sm-2 p-2">
-            <p key={i}>{day.dt_txt.substring(0, 10)}</p>
-            <p>Temperature {day.main.temp} °</p>
-            <p>Humidity {day.main.humidity} %</p>
+            <p className="lead" key={i}>{day.dt_txt.substring(0, 10)}</p>
+            <p className="lead">Temperature {day.main.temp} °</p>
+            <p className="lead">Humidity {day.main.humidity} %</p>
             <img
               src={
                 "https://openweathermap.org/img/wn/" +
