@@ -3,7 +3,7 @@ import './style.css'
 // import WeatherContext from '../../Utils/WeatherContext'
 function Weather({ name, temp, humidity, Windspeed, UVindex }) {
   return (
-    <div className="container">
+    <div className="rounded m-4 p-4 weather">
       <h3 className="display">{name}</h3>
       <p className="lead">{temp}</p>
       <p className="lead">{humidity}</p>
