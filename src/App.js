@@ -12,7 +12,7 @@ import Weather from "./Components/Weather";
 // use context
 // set the state for the current weather, put the value of the api
 
- function App() {
+function App() {
   const [inputState, setInputState] = useState("");
   const [currentWeather, setCurrentWeather] = useState({
     name: "",
@@ -33,7 +33,7 @@ import Weather from "./Components/Weather";
     setInputState(value);
   }
 
-   async function getWeather() {
+  async function getWeather() {
     const currentDate = moment().format(" (dddd, MMMM Do YYYY)");
     API.getWeather(inputState).then((res) => {
       const long = res.data.coord.lon;
@@ -52,42 +52,41 @@ import Weather from "./Components/Weather";
     });
 
     API.get5Day(inputState).then((fiveRes) => {
-        console.log(fiveRes.data)
-        for (let i = 0; i < 40; i = i +8) {
-          fiveDayArr.push(fiveRes.data.list[i])
-           console.log(fiveRes.data.list[i])
-       }
+      console.log(fiveRes.data);
+      for (let i = 0; i < 40; i = i + 8) {
+        fiveDayArr.push(fiveRes.data.list[i]);
+        console.log(fiveRes.data.list[i]);
+      }
 
-       setFiveDay(fiveDayArr)
-    })
-
+      setFiveDay(fiveDayArr);
+    });
   }
 
   return (
     <div>
       <Nav />
-      
-        <div className="conatiner">
-          <div className="row">
-            <div className="col">
-              <Search handleSearch={getWeather} handleChange={handleInput} />
-              <History />
-            </div>
-            <div className="col">
-              <Weather
-                name={currentWeather.name}
-                temp={currentWeather.temperature}
-                humidity={currentWeather.humidity}
-                Windspeed={currentWeather.W}
-                UVindex={currentWeather.UVindex}
-              />
-              <WeatherContext.Provider value={fiveDay}>
+
+      <div className="conatiner">
+        <div className="row">
+          <div className="col">
+            <Search handleSearch={getWeather} handleChange={handleInput} />
+            <History />
+          </div>
+          <div className="col">
+            <Weather
+              name={currentWeather.name}
+              temp={currentWeather.temperature}
+              humidity={currentWeather.humidity}
+              Windspeed={currentWeather.W}
+              UVindex={currentWeather.UVindex}
+            />
+            <WeatherContext.Provider value={fiveDay}>
               <Cards />
-              </WeatherContext.Provider>
-            </div>
+            </WeatherContext.Provider>
           </div>
         </div>
-      
+      </div>
+
       <Footer />
     </div>
   );
