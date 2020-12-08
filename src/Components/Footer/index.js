@@ -6,10 +6,10 @@ function Footer() {
 
     return (
         <div>
-        <header className="bg-dark p-2 fixed-buttom footer">
+        <header className="footer p-2 fixed-buttom footer">
           <div className="row">
             <div className="col-lg text-center">
-              <h1 className="text-white">Footer</h1>
+              <h1 className="text">Footer</h1>
             </div>
           </div>
         </header>
