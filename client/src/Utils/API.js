@@ -12,6 +12,9 @@ const API = {
     },
     get5Day: function(city) {
         return axios.get("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + KEY +  "&units=imperial")
+    },
+    addCity: function(city) {
+        return axios.post("/api/Weather", city);
     }
 }
 
