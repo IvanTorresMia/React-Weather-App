@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "./Components/Nav";
 import WeatherContext from "./Utils/WeatherContext";
 import Footer from "./Components/Footer";
@@ -28,6 +28,10 @@ function App() {
 
   // practice back end
   // save the weather data to a data base then call it back when a button is pressed
+useEffect(() => {
+    console.log(currentWeather.name)
+}, [currentWeather])
+
 
   function handleInput(event) {
     const { value } = event.target;

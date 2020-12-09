@@ -15,6 +15,9 @@ const API = {
     },
     addCity: function(city) {
         return axios.post("/api/Weather", city);
+    },
+    getCity: function(city) {
+        return axios.get("/api/Weaher");
     }
 }
 
