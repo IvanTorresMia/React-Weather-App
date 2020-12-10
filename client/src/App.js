@@ -27,7 +27,13 @@ function App() {
   const [fiveDay, setFiveDay] = useState([]);
   const fiveDayArr = [];
 
-  useEffect(() => {getNames()}, []);
+  useEffect(() => {
+    getNames();
+  }, [currentWeather.name]);
+
+  useEffect(() => {
+    getNames();
+  }, []);
 
   function handleInput(event) {
     event.preventDefault();
@@ -78,9 +84,9 @@ function App() {
     });
   }
 
-  async function getWeather() {
+  function getWeather() {
     getNames();
-    await addCityToDb(inputState);
+    addCityToDb(inputState);
     getfiveDayWeather(inputState);
     getCurrentWeather(inputState);
   }
