@@ -28,9 +28,12 @@ function App() {
 
   // practice back end
   // save the weather data to a data base then call it back when a button is pressed
-useEffect(() => {
-    console.log(currentWeather.name)
-}, [currentWeather])
+// useEffect(() => {
+//   console.log(currentWeather.name)
+//     API.addCity(currentWeather.name).then((res) => {
+//       console.log(res)
+//     })
+// }, [currentWeather])
 
 
   function handleInput(event) {
@@ -38,7 +41,7 @@ useEffect(() => {
     setInputState(value);
   }
 
-  async function getWeather() {
+function getWeather() {
     const currentDate = moment().format(" (dddd, MMMM Do YYYY)");
     API.getWeather(inputState).then((res) => {
       const long = res.data.coord.lon;
@@ -65,6 +68,10 @@ useEffect(() => {
 
       setFiveDay(fiveDayArr);
     });
+
+    API.addCity(inputState).then((res) => {
+      console.log(res)
+    })
   }
 
   return (

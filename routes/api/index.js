@@ -1,17 +1,20 @@
 var db = require("../../models");
-const router = require("express").Router()
 
-router.get("/Weather", function(req, res) {
+
+// module.exports = function(app) {
+
+router.get("api/Weather", function(req, res) {
     db.Weather.findAll({}).then(function(dbWeather) {
       res.json(dbWeather);
     });
   });
 
 // This will be our post route
-router.post("/weather", function(req, res) {
+router.post("api/Weather", function(req, res) {
     db.Weather.create(req.body).then(function(dbWeather) {
       res.json(dbWeather);
-    });
+    }).catch(err => res.status(422).json(err));;
   });
 
-module.exports = router;
+
+// }

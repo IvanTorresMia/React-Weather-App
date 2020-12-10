@@ -1,13 +1,13 @@
 // requiring express
 var express = require("express");
-const routes = require("./routes");
+const routes = require("./routes/index.js");
 
 // Sets up the Express App
 // =============================================================
 // saving express to our app
 var app = express();
 // saving the port to either the process.env port or 8080
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3001;
 
 // Requiring our models for syncing
 var db = require("./models");

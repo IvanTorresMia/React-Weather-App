@@ -1,5 +1,5 @@
 {
-  "name": "07-google-book-search",
+  "name": "weatherapp",
   "version": "1.0.0",
   "description": "### Overview",
   "main": "server.js",
@@ -23,7 +23,8 @@
     "mysql2": "^1.6.4",
     "react-router-dom": "^5.2.0",
     "sequelize": "^4.41.2",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.2.0",
+    "sqlite3": "^5.0.0"
   },
   "keywords": [],
   "author": "",
