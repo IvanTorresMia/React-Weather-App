@@ -11,7 +11,7 @@ function History({ handleButton }) {
             {/* render buttons in here. */}
             {history.map((button) => (
                 <div className="row">
-                    <button key={button.id} className="btn" id={button.id} onClick={handleButton}>{button.name}</button>
+                    <button key={button.id} className="btn m-2 button" id={button.id} onClick={handleButton}>{button.name}</button>
                 </div>
     ))}
         </div>

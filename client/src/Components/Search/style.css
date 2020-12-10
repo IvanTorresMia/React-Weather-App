@@ -4,3 +4,16 @@
         text-align: center;
         width: 400px;
 }
+
+.searchBtn {
+    box-shadow: 2px 2px 5px black;
+    background-color: #18A186;
+}
+
+
+.searchBtn:hover {
+    border: 1px solid #5551FF;
+} 
+.bar {
+    border: 2px solid black;
+}

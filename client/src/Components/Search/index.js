@@ -12,7 +12,7 @@ function Search({ handleSearch, handleChange }) {
         placeholder="City Name"
         onChange={handleChange}
       />
-      <button className="btn ml-2" onClick={handleSearch}>
+      <button className="btn ml-2 searchBtn" onClick={handleSearch}>
         Search
       </button>
     </div>
