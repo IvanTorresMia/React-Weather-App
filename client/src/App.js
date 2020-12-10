@@ -26,23 +26,16 @@ function App() {
   const [buttons, setButtons] = useState([]);
   const [fiveDay, setFiveDay] = useState([]);
   const fiveDayArr = [];
-  // const historyButtons = []
-  // for 5 day set the state of five day forcast then loop through the state using context
 
-  // practice back end
-  // save the weather data to a data base then call it back when a button is pressed
-
+  useEffect(() => {getNames()}, []);
 
   function handleInput(event) {
-    event.preventDefault()
+    event.preventDefault();
     const { value } = event.target;
     setInputState(value);
   }
 
-  async function mainWeather(city) {
-
-    await getNames()
-
+  function getCurrentWeather(city) {
     const currentDate = moment().format(" (dddd, MMMM Do YYYY)");
     API.getWeather(city).then((res) => {
       const long = res.data.coord.lon;
@@ -59,7 +52,9 @@ function App() {
         });
       });
     });
+  }
 
+  function getfiveDayWeather(city) {
     API.get5Day(city).then((fiveRes) => {
       for (let i = 0; i < 40; i = i + 8) {
         fiveDayArr.push(fiveRes.data.list[i]);
@@ -69,25 +64,32 @@ function App() {
     });
   }
 
-function getNames() {
-  API.getCity().then((res) => {
-    setButtons(res.data)
+  function getNames() {
+    API.getCity().then((res) => {
+      setButtons(res.data);
     });
-}
+  }
 
-  function getWeather() {
-    mainWeather(inputState);
+  function addCityToDb(city) {
+    // mainWeather(city);
 
-    API.addCity({ name: inputState }).then((res) => {
-      console.log(res); 
+    API.addCity({ name: city }).then((res) => {
+      console.log(res);
     });
+  }
+
+  async function getWeather() {
+    getNames();
+    await addCityToDb(inputState);
+    getfiveDayWeather(inputState);
+    getCurrentWeather(inputState);
   }
 
   function handleButton(event) {
     event.preventDefault();
-
     const currentButton = event.target.innerHTML;
-    mainWeather(currentButton);
+    getfiveDayWeather(currentButton);
+    getCurrentWeather(currentButton);
   }
 
   return (
