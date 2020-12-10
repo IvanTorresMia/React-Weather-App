@@ -39,7 +39,10 @@ function App() {
     setInputState(value);
   }
 
-  function mainWeather(city) {
+  async function mainWeather(city) {
+
+    await getNames()
+
     const currentDate = moment().format(" (dddd, MMMM Do YYYY)");
     API.getWeather(city).then((res) => {
       const long = res.data.coord.lon;
@@ -64,11 +67,13 @@ function App() {
 
       setFiveDay(fiveDayArr);
     });
-
-    API.getCity().then((res) => {
-      setButtons(res.data)
-      });
   }
+
+function getNames() {
+  API.getCity().then((res) => {
+    setButtons(res.data)
+    });
+}
 
   function getWeather() {
     mainWeather(inputState);
