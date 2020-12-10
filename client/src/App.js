@@ -44,36 +44,49 @@ useEffect(() => {
     setInputState(value);
   }
 
-function getWeather() {
-    const currentDate = moment().format(" (dddd, MMMM Do YYYY)");
-    API.getWeather(inputState).then((res) => {
-      const long = res.data.coord.lon;
-      const latt = res.data.coord.lat;
-      API.getUV(latt, long).then((response) => {
-        const UVindexVal = response.data.value;
-        setCurrentWeather({
-          ...currentWeather,
-          name: res.data.name + currentDate,
-          temperature: "Temperature: " + res.data.main.temp + "°",
-          humidity: "Humidity " + res.data.main.humidity + "%",
-          Windspeed: "Windspeed " + res.data.wind.speed + " MPH",
-          UVindex: UVindexVal,
-        });
+function mainWeather(city) {
+  const currentDate = moment().format(" (dddd, MMMM Do YYYY)");
+  API.getWeather(city).then((res) => {
+    const long = res.data.coord.lon;
+    const latt = res.data.coord.lat;
+    API.getUV(latt, long).then((response) => {
+      const UVindexVal = response.data.value;
+      setCurrentWeather({
+        ...currentWeather,
+        name: res.data.name + currentDate,
+        temperature: "Temperature: " + res.data.main.temp + "°",
+        humidity: "Humidity " + res.data.main.humidity + "%",
+        Windspeed: "Windspeed " + res.data.wind.speed + " MPH",
+        UVindex: UVindexVal,
       });
     });
+  });
 
-    API.get5Day(inputState).then((fiveRes) => {
-      for (let i = 0; i < 40; i = i + 8) {
-        fiveDayArr.push(fiveRes.data.list[i]);
-        
-      }
+  API.get5Day(city).then((fiveRes) => {
+    for (let i = 0; i < 40; i = i + 8) {
+      fiveDayArr.push(fiveRes.data.list[i]);
+      
+    }
 
-      setFiveDay(fiveDayArr);
-    });
+    setFiveDay(fiveDayArr);
+  });
+}
+
+function getWeather() {
+    mainWeather(inputState)
 
     API.addCity({name: inputState}).then((res) => {
       console.log(res)
     })
+  }
+
+
+  function handleButton(event) {
+    event.preventDefault()
+
+    const currentButton = event.target.innerHTML;
+    mainWeather(currentButton)
+
   }
 
   return (
@@ -85,7 +98,7 @@ function getWeather() {
           <div className="col">
             <Search handleSearch={getWeather} handleChange={handleInput} />
             <HistoryContext.Provider value={buttons}>
-            <History />
+            <History handleButton={handleButton} />
             </HistoryContext.Provider>
           </div>
           <div className="col">
