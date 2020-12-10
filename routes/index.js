@@ -12,7 +12,7 @@ router.get("/api/Weather", function(req, res) {
 
 // This will be our post route
 router.post("/api/Weather", function(req, res) {
-    db.Weather.create(req.body).then(function(dbWeather) {
+    db.Weather.create({name: req.body.name}).then(function(dbWeather) {
       res.json(dbWeather);
     }).catch(err => res.status(422).json(err));;
   });

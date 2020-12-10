@@ -22,19 +22,19 @@ function App() {
     Windspeed: "",
     UVindex: "",
   });
+  const [buttons, setButtons] = useState([])
   const [fiveDay, setFiveDay] = useState([]);
   const fiveDayArr = [];
   // for 5 day set the state of five day forcast then loop through the state using context
 
   // practice back end
   // save the weather data to a data base then call it back when a button is pressed
-// useEffect(() => {
-//   console.log(currentWeather.name)
-//     API.addCity(currentWeather.name).then((res) => {
-//       console.log(res)
-//     })
-// }, [currentWeather])
 
+useEffect(() => {
+  API.getCity().then((res) => {
+    console.log(res)
+  })
+}, [])
 
   function handleInput(event) {
     const { value } = event.target;
@@ -63,13 +63,13 @@ function getWeather() {
       console.log(fiveRes.data);
       for (let i = 0; i < 40; i = i + 8) {
         fiveDayArr.push(fiveRes.data.list[i]);
-        console.log(fiveRes.data.list[i]);
+        
       }
 
       setFiveDay(fiveDayArr);
     });
 
-    API.addCity(inputState).then((res) => {
+    API.addCity({name: inputState}).then((res) => {
       console.log(res)
     })
   }
