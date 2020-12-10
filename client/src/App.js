@@ -9,6 +9,7 @@ import History from "./Components/History";
 import Cards from "./Components/Cards";
 import Weather from "./Components/Weather";
 import './App.css'
+import HistoryContext from "./Utils/historyContext";
 
 // use context
 // set the state for the current weather, put the value of the api
@@ -32,7 +33,9 @@ function App() {
 
 useEffect(() => {
   API.getCity().then((res) => {
-    console.log(res)
+    setButtons(res.data)
+    console.log(res.data[0].name)
+    console.log(buttons)
   })
 }, [])
 
@@ -60,7 +63,6 @@ function getWeather() {
     });
 
     API.get5Day(inputState).then((fiveRes) => {
-      console.log(fiveRes.data);
       for (let i = 0; i < 40; i = i + 8) {
         fiveDayArr.push(fiveRes.data.list[i]);
         
@@ -82,7 +84,9 @@ function getWeather() {
         <div className="row">
           <div className="col">
             <Search handleSearch={getWeather} handleChange={handleInput} />
+            <HistoryContext.Provider value={buttons}>
             <History />
+            </HistoryContext.Provider>
           </div>
           <div className="col">
             <Weather
