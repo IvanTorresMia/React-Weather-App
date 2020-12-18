@@ -8,10 +8,10 @@ function History({ handleButton }) {
   return (
     <div className="rounded mr-4 ml-4 p-4 history">
       {/* render buttons in here. */}
-      {history.map((button) => (
+      {history.map((button, i) => (
         <div className="row">
           <button
-            key={button.id}
+            key={i}
             className="btn m-2 button"
             id={button.id}
             onClick={handleButton}
