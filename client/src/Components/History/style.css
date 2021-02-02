@@ -1,0 +1,14 @@
+.history {
+    background-color: #6E6D70;  
+    text-align: center;
+    width: 400px;
+}
+
+.button {
+    box-shadow: 2px 2px 5px black;
+    background-color: #28AF61;
+}
+
+.button:hover {
+    border: 1px solid #5551FF;
+} 

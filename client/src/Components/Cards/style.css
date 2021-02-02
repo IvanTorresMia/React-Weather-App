@@ -1,0 +1,12 @@
+.Card {
+    background-color: #5551FF;
+    /* border: 1px solid black; */
+    box-shadow: 5px 5px 10px black;
+}
+.Container {
+  background-color: #6E6D70;  
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+}
