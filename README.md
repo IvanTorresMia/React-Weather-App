@@ -105,7 +105,7 @@ export default WeatherContext;
 
 ## Author
 Ivan Torres
-* [GitHub-Repo](https://github.com/IvanTorresMia)
+* [GitHub](https://github.com/IvanTorresMia)
 * [linkedIn](www.linkedin.com/in/ivan-torres-0828931b2)
 
 ## Credits
