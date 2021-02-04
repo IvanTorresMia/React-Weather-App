@@ -19,7 +19,7 @@ Welcome to my very own Weather app. Here you will find the ability to search a c
 * [react](https://reactjs.org/)
 * [React-Router](https://reactrouter.com/)
 * [CSS](https://www.w3schools.com/css/)
-* [HTML](https://www.w3schools.com/html/)å
+* [HTML](https://www.w3schools.com/html/)
 * [JSX](https://reactjs.org/docs/introducing-jsx.html)
 * [Axios](https://www.npmjs.com/package/axios)
 
