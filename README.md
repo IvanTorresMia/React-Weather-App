@@ -21,7 +21,7 @@ Welcome to my very own Weather app. Here you will find the ability to search a c
 * [react](https://reactjs.org/)
 * [React-Router](https://reactrouter.com/)
 * [CSS](https://www.w3schools.com/css/)
-* [HTML](https://www.w3schools.com/html/)
+* [HTML](https://www.w3schools.com/html/)å
 * [JSX](https://reactjs.org/docs/introducing-jsx.html)
 * [Axios](https://www.npmjs.com/package/axios)
 
@@ -32,27 +32,7 @@ Welcome to my very own Weather app. Here you will find the ability to search a c
 
 ## Code
 
-* This is the code I used to map through my projects, Using Context.
-```
-      <div className="ConStyle">
-            <div className="title">
-            <h1 className="display-4">Projects</h1>
-            </div>
-            <hr />
-            <div className="row card-group">
-            {projects.map((project, i) => (
-                <div className="col-sm-4 projectStyle rounded" data-aos="fade-left">
-                    <h3 className="font-weight-normal">
-                    {project.name}
-                    </h3>
-                    <a href={project.link}>
-                    <img className="rounded projectImg" src={project.image} alt="project" />
-                    </a>
-                </div>
-    ))}
-            </div>
-        </div>
-  ```
+
 
 
 ## Author
@@ -69,3 +49,4 @@ Ivan Torres
 
 ## License]
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://www.mit.edu/~amini/LICENSE.md)
+# Weather App Using React.js

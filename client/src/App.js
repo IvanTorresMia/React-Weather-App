@@ -77,7 +77,6 @@ function App() {
   }
 
   function addCityToDb(city) {
-    // mainWeather(city);
 
     API.addCity({ name: city }).then((res) => {
       console.log(res);

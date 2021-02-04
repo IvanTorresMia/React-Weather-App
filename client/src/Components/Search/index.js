@@ -2,6 +2,11 @@ import React from "react";
 import "./style.css";
 
 function Search({ handleSearch, handleChange }) {
+
+  const clearInput = (event) => {
+event.preventDefault();
+event.target.value = ""
+  }
   return (
     <div className="rounded m-4 p-4 search">
       <h1 className="search-title">Search a City!</h1>
