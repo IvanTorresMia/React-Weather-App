@@ -4,7 +4,7 @@
 * [Description](#Description)
 * [Links](#Links)
 * [Technologies](#Technologies)
-* [Features](#Features)
+* [Gif](#Gif)
 * [Author](#Author)
 * [Credits](#Credits)
 * [License](#License)
@@ -12,8 +12,6 @@
 ## Description 
 Welcome to my very own Weather app. Here you will find the ability to search a city, state or country and find the current weather, along with the five day forcast. This project I previously wrote using jQuery, local storage, and Ajax but decided to re-write it using react, sequelize and axios. Have Fun searching your city!
 
-## Links
-* [Repo](https://github.com/IvanTorresMia/React-Weather-App)
 
 ## Technologies
 * [JavaScript](https://www.w3schools.com/js/)
@@ -27,8 +25,8 @@ Welcome to my very own Weather app. Here you will find the ability to search a c
 
 
 
-## Features
-![Gif](./reactportfolio.gif)
+## Gif
+![Gif](./assets/ReactWeather2.gif)
 
 ## Code
 
@@ -37,7 +35,7 @@ Welcome to my very own Weather app. Here you will find the ability to search a c
 
 ## Author
 Ivan Torres
-* [GitHub-Repo]()
+* [GitHub-Repo](https://github.com/IvanTorresMia)
 * [linkedIn](www.linkedin.com/in/ivan-torres-0828931b2)
 
 ## Credits

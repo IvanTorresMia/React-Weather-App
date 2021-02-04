@@ -83,7 +83,9 @@ function App() {
     });
   }
 
-  function getWeather() {
+  function getWeather(event) {
+    event.preventDefault()
+    event.target.previousElementSibling.value = "";
     getNames();
     addCityToDb(inputState);
     getfiveDayWeather(inputState);
